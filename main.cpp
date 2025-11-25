@@ -1,11 +1,11 @@
-#include "server.h"
-#include "operatedb.h"
+#include "client.h"
+
 #include <QApplication>
 
 int main(int argc, char *argv[])
 {
+    QCoreApplication::setAttribute(Qt::AA_EnableHighDpiScaling);
     QApplication a(argc, argv);
-    OperateDB::getInstance().conncet();
-    Server::getInstance().show();
+    Client::getInstance().show();
     return a.exec();
 }
